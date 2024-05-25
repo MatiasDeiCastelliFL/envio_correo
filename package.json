@@ -1,0 +1,19 @@
+{
+  "name": "nodemaile_up",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist-node/index.js",
+  "scripts": {
+    "build": "babel src -d dist-node "
+  },
+  "keywords": [],
+  "author": "Matias Marcelos Dei Castelli <matiasdeicastelli5@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatiasDeiCastelliFL/envio_correo.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}
