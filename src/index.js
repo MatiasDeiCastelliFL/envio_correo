@@ -22,7 +22,8 @@ function enviar_email(
   notificacion_mensaje,
   boton_mensaje,
   email_recibe,
-  enviar_logo
+  enviar_logo,
+  mensaje_accion
 ) {
   let mensaje_html = `<!DOCTYPE html>
         <html lang="en">
@@ -129,7 +130,7 @@ function enviar_email(
                   <!-- Gracias -->
                   <p>Gracias por tu tiempo.</p>
                   <p style="margin-bottom: 50px">
-                    <i>Atentamente:</i><br />El equipo activa gym
+                    <i>Atentamente:</i><br />${mensaje_accion}
                   </p>
         
                   <!-- Botón -->
