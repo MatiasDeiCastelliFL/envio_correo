@@ -163,14 +163,15 @@ function enviar_email(
             </div>
           </body>
         </html>`;
-  config(config_user_nodemailer, config_pass_nodemailer)
-    .veryfy()
+  const transporter = config(config_user_nodemailer, config_pass_nodemailer);
+  transporter
+    .verify()
     .then(() => {
       console.log("Conexion establecida correctamente");
     })
     .catch((err) => console.log(err));
 
-  config(config_user_nodemailer, config_pass_nodemailer)
+  transporter
     .sendMail({
       from: `Activa Gym: ${config_user_nodemailer}`,
       to: email_recibe,
