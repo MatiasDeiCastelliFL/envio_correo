@@ -12,13 +12,6 @@ const config = (user_nodemailer, pass_nodemailer) => {
   });
 };
 
-config
-  .veryfy()
-  .then(() => {
-    console.log("Conexion establecida correctamente");
-  })
-  .catch((err) => console.log(err));
-
 function enviar_email(
   config_user_nodemailer,
   config_pass_nodemailer,
@@ -170,6 +163,13 @@ function enviar_email(
             </div>
           </body>
         </html>`;
+  config(config_user_nodemailer, config_pass_nodemailer)
+    .veryfy()
+    .then(() => {
+      console.log("Conexion establecida correctamente");
+    })
+    .catch((err) => console.log(err));
+
   config(config_user_nodemailer, config_pass_nodemailer)
     .sendMail({
       from: `Activa Gym: ${config_user_nodemailer}`,
