@@ -28,7 +28,8 @@ function enviar_email(
   notificacion_titulo,
   notificacion_mensaje,
   boton_mensaje,
-  email_recibe
+  email_recibe,
+  enviar_logo
 ) {
   let mensaje_html = `<!DOCTYPE html>
         <html lang="en">
@@ -111,7 +112,7 @@ function enviar_email(
                   "
                 >
                   <img
-                    src="cid:Activa"
+                    src=${enviar_logo}
                     alt="Error imagen"
                     style="width: 200px; height: 60px"
                   />
@@ -176,13 +177,6 @@ function enviar_email(
       subject: cuerpo_mensaje_subject,
       text: notificacion_razon,
       html: mensaje_html,
-      attachments: [
-        {
-          filename: "Activa Gym.PNG",
-          path: "../public/Activa Gym.PNG",
-          cid: "Activa",
-        },
-      ],
     })
     .then((info) => {
       console.log(info);
